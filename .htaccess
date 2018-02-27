@@ -1,0 +1,16 @@
+#Options +FollowSymLinks
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+#IndexIgnore *
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|public|user_guide|robots\.txt)
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+RewriteRule ^(register)/?$ index.php/User_Authentication/user_registration_show [L]
