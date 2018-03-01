@@ -139,6 +139,15 @@ class Users_Model extends CI_Model {
   public function get_messages_total() {
     return $this->db->count_all_results('userMessages');
   }
+  
+  public function get_persontyp(){
+	$this->db->select('*');
+	$this->db->from('persontyp');
+	
+	$query = $this->db->get();
+		
+	return $data = $query->result_array();
+  }
 
 }
 

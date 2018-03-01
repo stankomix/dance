@@ -120,8 +120,12 @@ class Users extends Admin_Controller {
   }
 
   public function edit($Teilnehmerid) {
+	 
     $user = $this->Users_Model->get($Teilnehmerid);
+	$person_type = $this->Users_Model->get_persontyp();
+	
     $this->data['user'] = $user;
+    $this->data['user']['person_type'] = $person_type;
 
     $this->form_validation->set_rules('usertype', 'Member type', 'trim|numeric|required');
 
