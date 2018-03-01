@@ -142,7 +142,6 @@ Class Members extends Frontend_Controller {
     $data['userdata'] = $this->session->userdata['logged_in'];
     $data['inner_page'] = 'members/change_language';
     $data['languages'] = $conf['languages'];
-	print_r($data['languages']);
 
     $this->form_validation->set_rules('language', $this->lang->line('select_language'), 'trim|required|alpha');
 
