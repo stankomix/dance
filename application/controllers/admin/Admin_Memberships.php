@@ -30,7 +30,7 @@ class Admin_Memberships extends Admin_Controller {
 
   }
   
-  public function add(){
+  public function create_member(){
 	
 	$description = $this->input->post('description');
     $promodescription = $this->input->post('promodescription');
@@ -164,7 +164,7 @@ class Admin_Memberships extends Admin_Controller {
 
   }
 
-  public function create_member(){
+  public function add(){
 	  
 	
     $this->data['conf'] = $this->conf;

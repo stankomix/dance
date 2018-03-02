@@ -14,7 +14,7 @@
           <h3 class="box-title">Add membership</h3>
         </div>
 
-        <form action="/admin/memberships/add" method="post" enctype="multipart/form-data" role="form">
+        <form action="/admin/memberships/create" method="post" enctype="multipart/form-data" role="form">
           <div class="box-body">
 
             <?php if(validation_errors() != '') { ?>
