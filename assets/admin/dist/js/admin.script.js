@@ -29,3 +29,15 @@ $(function() {
 	});
 
 });
+
+jQuery("#resetUserCard").click(function(){
+		console.log("worked");
+		var userId = $(this).attr("data-id");
+		console.log(userId);
+		$.ajax({url: "/admin/users/updateUserCard",data:{userId:userId},type:"POST",success: function(result){
+		if(result == true){
+			alert("Card details removed");
+		}
+		
+    }});
+});

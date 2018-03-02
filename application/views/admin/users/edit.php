@@ -61,12 +61,12 @@
 			
             <div class="form-group">
               <label for="user-note">Mobiltelefon :</label>
-			   <input type="email" class="form-control" name="mobiltelefon" value="<?php echo  $user['Mobiltelefon']; ?>">
+			   <input type="text" class="form-control" name="mobiltelefon" value="<?php echo  $user['Mobiltelefon']; ?>">
             </div>
 			
 			<div class="form-group">
               <label for="user-note">Telefon :</label>
-			   <input type="email" class="form-control" name="telefon" value="<?php echo  $user['Telefon']; ?>">
+			   <input type="text" class="form-control" name="telefon" value="<?php echo  $user['Telefon']; ?>">
             </div>
 
 			<div class="form-group">
@@ -76,22 +76,22 @@
 			
 			<div class="form-group">
               <label for="user-note">Strasse:</label>
-			   <input type="email" class="form-control" name="strasse" value="<?php echo  $user['Strasse']; ?>">
+			   <input type="text" class="form-control" name="strasse" value="<?php echo  $user['Strasse']; ?>">
             </div>
 			
 			<div class="form-group">
               <label for="user-note">Ort:</label>
-			   <input type="email" class="form-control" name="ort" value="<?php echo  $user['Ort']; ?>">
+			   <input type="text" class="form-control" name="ort" value="<?php echo  $user['Ort']; ?>">
             </div>
 			
 			<div class="form-group">
               <label for="user-note">PLZ:</label>
-			   <input type="email" class="form-control" name="plz" value="<?php echo  $user['PLZ']; ?>">
+			   <input type="number" class="form-control" name="plz" value="<?php echo  $user['PLZ']; ?>">
             </div>
 			
 			<div class="form-group">
               <label for="user-note">Geburtsdatum:</label>
-			   <input type="email" class="form-control default-calendar" readonly name="geburtsdatum" value="<?php echo  $user['Geburtsdatum']; ?>">
+			   <input type="text" class="form-control default-calendar" readonly name="geburtsdatum" value="<?php echo  date("d.m.Y",strtotime($user['Geburtsdatum'])); ?>">
             </div>
 			
 			<div class="form-group">
@@ -113,7 +113,7 @@
 			
 			<div class="form-group">
               <label for="user-note">Eingetragen:</label>
-			   <input type="email" class="form-control default-calendar" readonly name="eingetragen" value="<?php echo  $user['Eingetragen']; ?>">
+			   <input type="text" class="form-control default-calendar" readonly name="eingetragen" value="<?php echo   date("d.m.Y",strtotime($user['Eingetragen'])); ?>">
             </div>
 
             <div class="form-group">
@@ -123,6 +123,12 @@
                                         $user['usertype'],
                                         array('id' => 'user-type', 'class' => 'form-control'));
               ?>
+            </div>
+			
+			
+			<div class="form-group">
+              <label for="user-note">Reset Card:</label>
+			   <input type="button" id="resetUserCard" data-id="<?php echo $user['Teilnehmerid']; ?>"  class="btn btn-primary" name="eingetragen" value="Reset Card">
             </div>
 
           </div>

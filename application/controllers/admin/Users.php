@@ -136,6 +136,20 @@ class Users extends Admin_Controller {
       $data = array(
         'Bemerkung' => $this->input->post('Bemerkung'),
         'usertype' => $this->input->post('usertype'),
+		'Vorname'=> $this->input->post('vorname'),
+		'Nachname' => $this->input->post('nachname'),
+		'persontyp' => $this->input->post('personType'),
+		'language' => $this->input->post('language'),
+		'Mobiltelefon'=>$this->input->post('mobiltelefon'),
+		'Telefon'=>$this->input->post('telefon'),
+		'Email'=>$this->input->post('email'),
+		'Strasse'=>$this->input->post('strasse'),
+		'Ort'=>$this->input->post('ort'),
+		'PLZ' =>$this->input->post('plz'),
+		'Geburtsdatum' => date("Y-m-d H:i:s",strtotime($this->input->post('geburtsdatum'))),
+		'Newsletter' => $this->input->post('Newsletter'),
+		'Eingetragen' => date("Y-m-d H:i:s",strtotime($this->input->post('eingetragen'))),
+		'usertype' =>$this->input->post('usertype')
       );
 
       $this->Users_Model->edit($Teilnehmerid, $data);
@@ -220,5 +234,31 @@ class Users extends Admin_Controller {
 
     redirect('/admin/users/messages');
   }
-
+	
+   public function updateUserCard(){
+	 
+		if(!empty($this->input->post('userId'))){
+			
+			$userId = $this->input->post('userId');
+			
+			$data = array(
+				'Cardnumber' => null
+			);
+			
+			$where = array(
+				'Teilnehmerid' => $userId
+			);
+			
+			$response = $this->Users_Model->edit($userId,$data);
+				
+			if($response){
+				echo 1;
+			}else{
+				print_r(json_encode($response));
+			}
+			
+			die();
+		}
+   
+   }
 }
