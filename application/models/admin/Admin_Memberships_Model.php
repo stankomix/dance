@@ -94,7 +94,24 @@ Class Admin_Memberships_Model extends CI_Model {
     return $query->result_array();
 
   }
+  
+  public function get_course_type(){
+	  
+		$this->db->select('*');
+		$this->db->from('coursetype');
+	    $query = $this->db->get();
 
+		return $query->result_array();
+  }
+
+  public function add_membership($data){
+
+		$this->db->insert('abotype',$data);
+		return true;
+  }
+  
+	
+  
 }
 
 ?>

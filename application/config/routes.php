@@ -140,3 +140,5 @@ $route['admin/users/open-messages'] = 'admin/Users/open_messages';
 $route['admin/memberships'] = 'admin/Admin_Memberships/index';
 $route['admin/memberships/view/(:any)'] = 'admin/Admin_Memberships/view/$1';
 $route['admin/memberships/edit/(:any)'] = 'admin/Admin_Memberships/edit/$1';
+$route['admin/memberships/create'] = 'admin/Admin_Memberships/create_member';
+$route['admin/memberships/add'] = 'admin/Admin_Memberships/add';

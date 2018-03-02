@@ -45,6 +45,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="/admin/memberships">Base memberships</a></li>
+          <li><a href="/admin/memberships/create">Add memberships</a></li>
         </ul>
       </li>
 

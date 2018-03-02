@@ -29,6 +29,46 @@ class Admin_Memberships extends Admin_Controller {
     $this->load->view('admin/_layouts/admin', $this->data);
 
   }
+  
+  public function add(){
+	
+	$description = $this->input->post('description');
+    $promodescription = $this->input->post('promodescription');
+    $based_on = $this->input->post('based_on');
+    $coursetype = $this->input->post('coursetype');
+	
+	$data = array(
+			'Description'=>$description,
+			'promodescription'=>$promodescription,
+			'based_on'=>$based_on,
+			'coursetype'=>$coursetype
+	);
+	
+	$added = $this->Admin_Memberships_Model->add_membership($data);
+	
+	
+	$message = array('type' => 'success', 'text' => "Membership created sucessfully");
+          $this->session->set_flashdata('flash_message', $message);
+          redirect('/admin/memberships');
+	
+	/* if(isset($_FILES['image']['size']) && !empty($_FILES['image']['size'])) {
+		
+		$filename = 'file_' . time();
+        $uploaded = $this->upload_image($filename);
+		
+		print_r($uploaded);
+		die();
+		
+        if(isset($uploaded['file_name'])) {
+        echo  $data['filename'] = $uploaded['file_name'];
+        } else {
+          $message = array('type' => 'danger', 'text' => $uploaded);
+          $this->session->set_flashdata('flash_message', $message);
+          redirect('/admin/memberships/create');
+        }
+      } */
+	  
+  }
 
   public function edit($id) {
 
@@ -124,4 +164,15 @@ class Admin_Memberships extends Admin_Controller {
 
   }
 
+  public function create_member(){
+	  
+	
+    $this->data['conf'] = $this->conf;
+	$this->data['course_type'] = $this->Admin_Memberships_Model->get_course_type();
+	
+
+    $this->data['inner_page'] = 'admin/memberships/add';
+    $this->load->view('admin/_layouts/admin', $this->data);
+	  
+  }
 }

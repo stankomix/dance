@@ -61,7 +61,7 @@
 			
             <div class="form-group">
               <label for="user-note">Mobiltelefon :</label>
-			   <input type="text" class="form-control" name="mobiltelefon" value="<?php echo  $user['Mobiltelefon']; ?>">
+			   <input type="text" class="form-control" name="mobiltelefon" value="<?php echo  $user['Mobiltelefon']; ?>" required>
             </div>
 			
 			<div class="form-group">
@@ -71,22 +71,22 @@
 
 			<div class="form-group">
               <label for="user-note">Email:</label>
-			   <input type="email" class="form-control" name="email" value="<?php echo  $user['Email']; ?>">
+			   <input type="email" class="form-control" name="email" value="<?php echo  $user['Email']; ?>" required>
             </div>
 			
 			<div class="form-group">
               <label for="user-note">Strasse:</label>
-			   <input type="text" class="form-control" name="strasse" value="<?php echo  $user['Strasse']; ?>">
+			   <input type="text" class="form-control" name="strasse" value="<?php echo  $user['Strasse']; ?>" required>
             </div>
 			
 			<div class="form-group">
               <label for="user-note">Ort:</label>
-			   <input type="text" class="form-control" name="ort" value="<?php echo  $user['Ort']; ?>">
+			   <input type="text" class="form-control" name="ort" value="<?php echo  $user['Ort']; ?>" required>
             </div>
 			
 			<div class="form-group">
               <label for="user-note">PLZ:</label>
-			   <input type="number" class="form-control" name="plz" value="<?php echo  $user['PLZ']; ?>">
+			   <input type="number" class="form-control" name="plz" value="<?php echo  $user['PLZ']; ?>" required>
             </div>
 			
 			<div class="form-group">
@@ -108,12 +108,12 @@
 
             <div class="form-group">
               <label for="user-note">Bemerkung:</label>
-              <textarea id="user-note" class="form-control" name="Bemerkung"><?php echo $user['Bemerkung']; ?></textarea>
+              <textarea id="user-note" required class="form-control" name="Bemerkung"><?php echo $user['Bemerkung']; ?></textarea>
             </div>
 			
 			<div class="form-group">
               <label for="user-note">Eingetragen:</label>
-			   <input type="text" class="form-control default-calendar" readonly name="eingetragen" value="<?php echo   date("d.m.Y",strtotime($user['Eingetragen'])); ?>">
+			   <input required type="text" class="form-control default-calendar" readonly name="eingetragen" value="<?php echo   date("d.m.Y",strtotime($user['Eingetragen'])); ?>">
             </div>
 
             <div class="form-group">
@@ -128,7 +128,7 @@
 			
 			<div class="form-group">
               <label for="user-note">Reset Card:</label>
-			   <input type="button" id="resetUserCard" data-id="<?php echo $user['Teilnehmerid']; ?>"  class="btn btn-primary" name="eingetragen" value="Reset Card">
+			   <input required type="button" id="resetUserCard" data-id="<?php echo $user['Teilnehmerid']; ?>"  class="btn btn-primary" name="eingetragen" value="Reset Card">
             </div>
 
           </div>
