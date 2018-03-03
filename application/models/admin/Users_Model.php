@@ -140,7 +140,7 @@ class Users_Model extends CI_Model {
     return $this->db->count_all_results('userMessages');
   }
   
-  public function get_persontyp(){
+  public function get_persontype(){
 	$this->db->select('*');
 	$this->db->from('persontyp');
 	
